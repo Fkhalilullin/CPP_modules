@@ -31,6 +31,8 @@ public:
     void AddNickname();
     void AddPhoneNumber();
     void AddDarkestSecret();
+    void PrintList();
+    void PrintInfo(int index);
 };
 
 #endif

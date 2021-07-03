@@ -20,18 +20,17 @@ int main()
     while (1)
     {
         std::cout << "Enter command: ";
-        std::cin >> cmd;
+        if (std::cin.eof() != 0)
+			return (0);
+        std::getline(std::cin, cmd);
         if (!cmd.compare("EXIT"))
             return (0);
         else if (!cmd.compare("ADD"))
             phonebook.AddContact();
         else if (!cmd.compare("SEARCH"))
-        {
-            //хуита
-        }
+            phonebook.SearchContact();
         else
-            std::cout << "Wrong command :( ";
-        std::cout << std::endl;
+            std::cout << "Wrong input" << std::endl;
     }
     return (0);   
 }
