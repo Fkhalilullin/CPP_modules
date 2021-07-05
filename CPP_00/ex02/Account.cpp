@@ -6,13 +6,14 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 13:37:25 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/05 16:48:54 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:33:47 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
 #include <iomanip>
+#include <time.h>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -44,12 +45,11 @@ Account::Account(void)
 }
 Account::~Account(void)
 {
-    static int count = 0;
     
     Account::_displayTimestamp();
 	this->_nbAccounts--;
-	// std::cout << "index:" << this->_accountIndex << ";";
-    std::cout << "index:" << count++ << ";";
+	this->_accountIndex = 0;
+	std::cout << "index:" << this->_accountIndex++ << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
 }
@@ -76,7 +76,16 @@ int Account::getNbWithdrawals(void)
 
 void Account::_displayTimestamp(void)
 {
-    std::cout << "[19920104_091532]";
+	time_t rawtime;
+ 	struct tm * timeinfo;
+  	time (&rawtime);
+  	timeinfo = localtime(&rawtime);
+	std::cout << std::setfill('0') << "[" << (timeinfo->tm_year + 1900)
+	<< std::setw(2) << timeinfo->tm_mon
+	<< std::setw(2) << timeinfo->tm_mday << "_"
+	<< std::setw(2) << timeinfo->tm_hour
+	<< std::setw(2) << timeinfo->tm_min
+	<< std::setw(2) << timeinfo->tm_sec << "] ";
 }
 
 void Account::displayAccountsInfos(void)
