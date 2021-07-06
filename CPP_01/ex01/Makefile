@@ -1,5 +1,5 @@
 NAME = zombie
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
 OBJS = $(SRCS:.cpp=.o)
 CLANG = clang++ -Wall -Werror -Wextra
 
@@ -13,6 +13,7 @@ $(OBJS): %.o : %.cpp
 
 clean:
 	rm -rf $(OBJS)
+
 fclean: clean
 	rm -rf $(NAME)
 
