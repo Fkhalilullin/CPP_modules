@@ -6,13 +6,13 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:55:56 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/06 20:33:17 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:36:16 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() : _name("NULL")
+Zombie::Zombie() : _name("no_name")
 {
     std::cout << "Zombie " << this->_name
     << " risen from the dead" << std::endl;
