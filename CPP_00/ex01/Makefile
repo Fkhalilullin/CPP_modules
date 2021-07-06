@@ -12,7 +12,7 @@ $(OBJS): %.o : %.cpp
 	$(CLANG) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS) $(NAME)
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
