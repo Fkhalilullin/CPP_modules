@@ -6,11 +6,13 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:18:40 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/06 15:10:14 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/09 17:54:07 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie() : _name("NoName"){}
 
 Zombie::Zombie(std::string name) : _name(name)
 {

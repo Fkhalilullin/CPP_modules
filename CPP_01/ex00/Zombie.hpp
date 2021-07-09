@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:11:01 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/06 15:08:40 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/09 17:53:44 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Zombie
 private:
     std::string _name;    
 public:
+    Zombie();
     Zombie(std::string name);
     ~Zombie();
     
