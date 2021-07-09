@@ -1,6 +1,6 @@
 NAME = weapon
-SRCS = main.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+OBJS = $(SRCS:.cpp=.o) 
 CLANG = clang++ -Wall -Werror -Wextra
 
 all: $(NAME)
