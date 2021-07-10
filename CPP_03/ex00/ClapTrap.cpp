@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 18:31:15 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/10 20:48:03 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/10 21:06:21 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,23 @@ void ClapTrap::takeDamage(unsigned int amount)
     }
     else
     {
-        std::cout <<"AAAAAAAaaaAAAa " << "I take " << amount << " damage ";
+        std::cout << "AAAAAAAaaaAAAa " << "I take " << amount << " damage ";
         this->_hitpoints -= amount;   
+        std::cout << "I have " << this->_hitpoints << " hitpoints" << std::endl;
     }
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-
-    std::cout <<"Oh God thank you" << "I take " << amount << " heals ";
-    this->_hitpoints += amount;   
+    if (this->_energy_points == 0)
+    {
+        std::cout << "I haven't energy " << std::endl;
+        return ;
+    }
+    std::cout <<"Oh God thank you " << "I take " << amount << " heals ";
+    this->_hitpoints += amount;
+    this->_energy_points -= 2;
+    std::cout << "I have " << this->_hitpoints << " hitpoints" << std::endl;
 }
 
 std::string ClapTrap::getName(void) const
