@@ -1,13 +1,12 @@
-NAME = ClapTrap
+NAME = ScavTrap
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
-HEADER = ClapTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CLANG = clang++ -std=c++98 -Wall -Werror -Wextra -fsanitize=address
-
+CLANG = clang++ -std=c++98 -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)
