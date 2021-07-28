@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:20:55 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/05 17:09:39 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/09 17:51:48 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ PhoneBook::PhoneBook()
 {
     count = 0;
 }
+
 PhoneBook::~PhoneBook(){}
 
 void PhoneBook::AddContact()

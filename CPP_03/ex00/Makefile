@@ -1,11 +1,16 @@
-NAME = clapTrap
-SRCS = main.cpp ClapTrap.cpp 
-OBJS = $(SRCS:.cpp=.o) 
-CLANG = clang++ -Wall -Werror -Wextra
+NAME = ClapTrap
+
+SRCS = main.cpp ClapTrap.cpp
+
+HEADER = ClapTrap.hpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+CLANG = clang++ -std=c++98# -Wall -Werror -Wextra -fsanitize=address
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 	$(CLANG) $(OBJS) -o $(NAME)
 
 $(OBJS): %.o : %.cpp
@@ -17,6 +22,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: clean all
+re: fclean all
 
-.PHONY: all, re, clean
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 18:31:17 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/10 19:20:30 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/28 15:54:21 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ public:
 private:
 
     std::string     _name;
-    unsigned int    _hitpoints = 10;
-    unsigned int    _energy_points = 10;
-    unsigned int    _attack_damage = 0;
+    unsigned int    _hitpoints;
+    unsigned int    _energy_points;
+    unsigned int    _attack_damage;
     
 };
 
