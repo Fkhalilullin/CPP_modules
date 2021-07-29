@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:57:07 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/29 16:43:38 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/29 18:56:44 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,18 @@ DiamondTrap::~DiamondTrap() {
     std::cout << "Destructor DiamondTrap called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name) , FragTrap(name), ScavTrap(name) {
-    ClapTrap::_name = name + "_clap_name";
-    
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name) {
+    // ClapTrap::_name = name + "_clap_name";
+    // this->_hitpoints = FragTrap::getHitpoints();
+    // this->_energy_points = ScavTrap::getEnergyPoints();
+    // this->_attack_damage = FragTrap::getAttackDamage();
+    // this->_hitpoints = FragTrap::_hitpoints;
+    // this->_energy_points = ScavTrap::_energy_points;
+    // // this->
     this->_name = name;
-    this->_hitpoints = FragTrap::_hitpoints;
-    this->_energy_points = ScavTrap::_energy_points;
-    this->_attack_damage = FragTrap::_attack_damage;
-     std::cout << "Default  DiamondTrap constructor with " << this->_name << " name called" << std::endl;
+    this->_attack_damage = getAttackDamageFragTrap();
+    this->_hitpoints = getHitpointsFragTrap();
+    std::cout << "Default  DiamondTrap constructor with " << this->_name << " name called" << std::endl;
 }
 
 
@@ -56,4 +60,8 @@ void DiamondTrap::attack(std::string const &target) {
 void DiamondTrap::whoAmI() {
     std::cout << "DiamondTrap name: " << this->_name << std::endl;
 	std::cout << "ClapTrap name: " << ClapTrap::_name << std::endl;
+}
+
+std::string DiamondTrap::getNameDiamondTrap() {
+    return this->_name;
 }

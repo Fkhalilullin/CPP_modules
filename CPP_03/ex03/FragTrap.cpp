@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:33:57 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/29 16:15:38 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/29 18:50:17 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
     this->_hitpoints = 100;
     this->_energy_points = 100;
     this->_attack_damage = 30;
+    this->_attack_damage_fragTrap = 30;
+    this->_hitpoints_fragTrap = 100;
      std::cout << "Default  FragTrap constructor with " << this->_name << " name called" << std::endl;
 }
 
@@ -59,3 +61,12 @@ void FragTrap::highFivesGuys() {
     std::cout << "FragTrap give fives :) " << std::endl;
 }
 
+unsigned int FragTrap::getAttackDamageFragTrap() {
+    
+    return this->_attack_damage_fragTrap;
+}
+
+unsigned int FragTrap::getHitpointsFragTrap() {
+    
+    return this->_hitpoints_fragTrap;
+}

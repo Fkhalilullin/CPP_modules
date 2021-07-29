@@ -6,13 +6,16 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:33:55 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/29 11:37:51 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/29 18:18:59 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
+class FragTrap: virtual public ClapTrap
 {
 
 public:
@@ -28,3 +31,5 @@ public:
     void highFivesGuys();
         
 };
+
+#endif

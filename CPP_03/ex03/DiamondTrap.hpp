@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:57:04 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/29 16:06:08 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/29 18:55:52 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ public:
     DiamondTrap & operator=(DiamondTrap const &rhs);
 
 	void whoAmI();
-	void attack(std::string const &target);
-	
+    void attack(std::string const &target);
+	std::string getNameDiamondTrap();
+    
 private:
 
 	std::string _name;

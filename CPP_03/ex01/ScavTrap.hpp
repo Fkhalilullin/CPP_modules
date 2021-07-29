@@ -6,9 +6,12 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 17:51:32 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/28 21:04:11 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/07/29 13:25:50 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
@@ -28,3 +31,5 @@ public:
     void guardGate();
         
 };
+
+#endif
