@@ -3,6 +3,9 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+
 int main()
 {
 	const Animal* meta = new Animal();
@@ -16,4 +19,10 @@ int main()
 	j->makeSound();
 
 	meta->makeSound();
+
+	// const WrongAnimal* animal = new WrongAnimal();
+	// const WrongAnimal* cat = new WrongCat();
+	// animal->makeSound;
+	// cat->makeSound;
+	return 0;
 }

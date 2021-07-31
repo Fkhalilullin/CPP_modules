@@ -1,8 +1,8 @@
 NAME = Animal
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
 
-HEADER = Animal.hpp Dog.hpp Cat.hpp
+HEADER = Animal.hpp Dog.hpp Cat.hpp WrongCat.hpp WrongAnimal.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
