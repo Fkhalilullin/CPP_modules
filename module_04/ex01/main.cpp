@@ -2,9 +2,7 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
@@ -19,10 +17,8 @@ int main()
 	j->makeSound();
 
 	meta->makeSound();
-
-	// const WrongAnimal* animal = new WrongAnimal();
-	// const WrongAnimal* cat = new WrongCat();
-	// animal->makeSound;
-	// cat->makeSound;
+	
+	const Brain *k = new Brain();
+	delete k;
 	return 0;
 }

@@ -2,6 +2,8 @@
 #define BRAIN_HPP
 
 #include <iostream>
+#include <ctime>
+#include "Animal.hpp"
 
 class Brain {
 private:
@@ -14,6 +16,7 @@ public:
 	Brain & operator=(Brain const &rhs);
 	
 	std::string getRandom();
+	void		checkRef(Brain firstBrain, Brain secondBrain, int nbr);
 };
 
 #endif
