@@ -1,20 +1,20 @@
 #include "Brain.hpp"
 
-
-
 Brain::Brain() {
-    int random_variable = std::rand();
 	std::srand(std::time(nullptr));
+    int random_variable = std::rand();
+	static int a = 0;
 	for (int i = 0; i < 100; i++) {
-		random_variable = std::rand() % 5; 
-		this->_ideas[i] = getRandom();
-		std::cout << random_variable << std::endl;
+		random_variable = a + std::rand()/((RAND_MAX + 1u)/5);
+		this->_ideas[i] = getRandom(random_variable);
+		// std::cout << random_variable << std::endl;
 	}
+	a++;
 }
 
 Brain::~Brain() {}; 
 
-std::string getRandom(int random_variable) {
+std::string Brain::getRandom(int random_variable) {
 	if (random_variable == 0)
 		return ("poop");
 	else if (random_variable == 1)
@@ -25,12 +25,11 @@ std::string getRandom(int random_variable) {
 		return ("watching");
 	else if (random_variable == 4)
 		return ("eating");
+	return ("NoName");
 }
 
 Brain::Brain(const Brain &src) {
-	for (int i = 0; i < 100; i++) { //CHECK
-		this->_ideas[i] = src._ideas[i];
-	}
+	*this = src;
 }
 
 Brain & Brain::operator=(Brain const &rhs) {
@@ -40,8 +39,14 @@ Brain & Brain::operator=(Brain const &rhs) {
 	return *this;
 }
 
-void Brain::checkRef(Brain firstBrain, Brain secondBrain, int nbr) {
-	
+std::string Brain::getIdeas(int var) {
+	return this->_ideas[var];
 }
 
+std::string * Brain::getRef(int var) {
+	return &(this->_ideas[var]);
+}
 
+std::string * Brain::getBrainIdeas() {
+	return (this->_ideas);
+}

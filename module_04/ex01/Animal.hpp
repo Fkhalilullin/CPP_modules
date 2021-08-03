@@ -12,9 +12,9 @@ public:
 
 	Animal & operator=(Animal const &rhs);
 
-	virtual void makeSound() const;
-	std::string getType() const;
-
+	virtual void	makeSound() const;
+	std::string		getType() const;
+	// void			checkRef(Brain firstBrain, Brain secondBrain, int nbr);
 protected:
 	std::string _type;
 };

@@ -6,19 +6,26 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	// const Animal* meta = new Animal();
+	// const Animal* j = new Dog();
+	// const Animal* i = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	// std::cout << j->getType() << " " << std::endl;
+	// std::cout << i->getType() << " " << std::endl;
 
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	// i->makeSound(); //will output the cat sound!
+	// j->makeSound();
 
-	meta->makeSound();
-	
-	const Brain *k = new Brain();
-	delete k;
+	// meta->makeSound();
+
+	// checkRef(j->getBrain(), j->getBrain(), 10);
+	// const Animal* a = new Dog();
+	// const Animal* b = new Dog();
+	Dog a;
+	Dog b;
+	Dog::cmp(a,b);
+	a = b;
+	std::cout << "??????????????????????????" << '\n';
+	Dog::cmp(a,b);
 	return 0;
 }
