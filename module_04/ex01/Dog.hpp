@@ -14,8 +14,7 @@ public:
 
 	void		makeSound() const;
 	Brain *		getBrain() const;
-	static void cmp(Dog &a, Dog &b);
-	static void	checkRef(Brain* firstBrain, Brain* secondBrain, int nbr);
+	static void	checkRef(Dog& firstDog, Dog& secondDog);
 private:
 	Brain* _brain;
 };

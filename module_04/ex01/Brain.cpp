@@ -5,9 +5,8 @@ Brain::Brain() {
     int random_variable = std::rand();
 	static int a = 0;
 	for (int i = 0; i < 100; i++) {
-		random_variable = a + std::rand()/((RAND_MAX + 1u)/5);
+		random_variable = (a + std::rand()) % 5;
 		this->_ideas[i] = getRandom(random_variable);
-		// std::cout << random_variable << std::endl;
 	}
 	a++;
 }
@@ -33,7 +32,7 @@ Brain::Brain(const Brain &src) {
 }
 
 Brain & Brain::operator=(Brain const &rhs) {
-	for (int i = 0; i < 100; i++) { //CHECK
+	for (int i = 0; i < 100; i++) {
 		this->_ideas[i] = rhs._ideas[i];
 	}
 	return *this;

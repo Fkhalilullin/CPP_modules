@@ -6,26 +6,36 @@
 
 int main()
 {
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
 
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
+	i->makeSound();
+	j->makeSound();
 
-	// meta->makeSound();
+	meta->makeSound();
 
-	// checkRef(j->getBrain(), j->getBrain(), 10);
-	// const Animal* a = new Dog();
-	// const Animal* b = new Dog();
-	Dog a;
-	Dog b;
-	Dog::cmp(a,b);
-	a = b;
-	std::cout << "??????????????????????????" << '\n';
-	Dog::cmp(a,b);
+	std::cout << std::endl << "Before copy: " << std::endl;
+	Dog firstDog;
+	Dog secondDog;
+
+	Dog::checkRef(firstDog, secondDog);
+
+	firstDog = secondDog;
+
+	std::cout << "After copy: " << std::endl;
+	Dog::checkRef(firstDog, secondDog);
+
+	std::cout << "Copy construction: " << std::endl;
+	Dog thirdDog(firstDog);
+	Dog::checkRef(thirdDog, firstDog);
+
+	delete meta;
+	delete j;
+	delete i;
+	
 	return 0;
 }

@@ -13,7 +13,8 @@ public:
 	Cat & operator=(Cat const &rhs);
 
 	void makeSound() const;
-	void checkRef(Brain firstBrain, Brain secondBrain, int nbr);
+	Brain *		getBrain() const;
+	static void	checkRef(Cat& firstCat, Cat& secondCat);
 private:
 	Brain* _brain;
 };
