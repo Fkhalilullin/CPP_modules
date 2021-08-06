@@ -11,6 +11,7 @@ Dog::~Dog() {
 }
 
 Dog::Dog(const Dog &src) {
+
 	this->_brain = new Brain();
 	this->_type = getType();
 
@@ -23,7 +24,6 @@ Dog & Dog::operator=(Dog const &rhs) {
 	
 	if(this->_brain)
 		delete this->_brain;
-
 	this->_type = rhs.getType();
 	this->_brain = new Brain();
 	for (int i = 0; i < 100; i++) {
