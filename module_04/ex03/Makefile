@@ -1,12 +1,12 @@
 NAME = ex04
 
-SRCS = main.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp MateriaSource.cpp Ice.cpp
 
-HEADER = 
+HEADER = AMateria.hpp Character.hpp Cure.hpp MateriaSource.hpp Ice.hpp IMateriaSource.hpp ICharacter.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CLANG = clang++ -g -std=c++98 -Wall -Werror -Wextra -Wshadow -Wno-shadow
+CLANG = clang++ -g -std=c++98  -Wshadow -Wno-shadow #-Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)

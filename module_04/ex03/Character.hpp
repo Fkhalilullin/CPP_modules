@@ -9,6 +9,7 @@ class Character : public ICharacter {
 private: 
 	std::string	_name;
 	AMateria*	_materiaCharacter[4];
+	int			_count;
 public:
 	Character(std::string name);
 	Character();
@@ -21,6 +22,9 @@ public:
 	void equip(AMateria* m);
 	void unequip(int idx);
 	void use(int idx, ICharacter& target);
+
+	AMateria* getMateriaCharacter(int idx) const;
+	int	getCount() const;
 };
 
 #endif

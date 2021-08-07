@@ -1,8 +1,10 @@
 #include "Ice.hpp"
 
-Ice::Ice(std::string const & type) : AMateria("ice") {} // write new class for others spells
+Ice::Ice(std::string const & type) : AMateria("ice") {}
 
-Ice::Ice() : AMateria() {}
+Ice::Ice() : AMateria() {
+	this->_type = "ice";
+}
 
 Ice::~Ice() {}
 
@@ -19,10 +21,7 @@ AMateria* Ice::clone() const {
 	return (new Ice(*this));
 }
 
-void use(ICharacter & target) {
-	//Dopisatj// 
-	// std cout ice bolt v
-	// Amateria::use()
-	// i nanes 200 urona
+void Ice::use(ICharacter & target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 

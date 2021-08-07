@@ -2,7 +2,9 @@
 
 Cure::Cure(std::string const & type) : AMateria("cure") {}
 
-Cure::Cure() : AMateria() {}
+Cure::Cure() : AMateria() {
+	this->_type = "cure";
+}
 
 Cure::~Cure() {}
 
@@ -19,7 +21,7 @@ AMateria* Cure::clone() const {
 	return (new Cure(*this));
 }
 
-void use(ICharacter & target) {
-	//Dopisatj
+void Cure::use(ICharacter & target) {
+	std::cout << "* heals " <<  target.getName() << " wounds * " << std::endl;
 }
 
