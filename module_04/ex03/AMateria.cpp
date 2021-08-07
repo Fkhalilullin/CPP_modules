@@ -1,17 +1,17 @@
 #include "AMateria.hpp"
 
 AMateria::AMateria(std::string const &type) {
-	std::cout << "constructor with type called\n";
+	std::cout << "constructor AMateria with type called\n";
 	this->_type = type;
 }
 
 AMateria::AMateria() {
-	std::cout << "constructor called\n";
-	this->_type = "no_spell";
+	std::cout << "constructor AMateria called\n";
+	this->_type = "NoType";
 }
 
 AMateria::~AMateria() {
-	std::cout << "destructor called\n";
+	std::cout << "destructor AMateria called\n";
 }
 
 AMateria::AMateria(const AMateria &src) {
@@ -20,6 +20,7 @@ AMateria::AMateria(const AMateria &src) {
 
 AMateria & AMateria::operator=(AMateria const &rhs) {
 	this->_type = rhs.getType();
+	return *this;
 }
 
 std::string const & AMateria::getType() const {
@@ -27,5 +28,5 @@ std::string const & AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter& target) {
-	//??????????????????????
-}
+	// gettype()
+	}
