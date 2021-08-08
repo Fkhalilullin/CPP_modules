@@ -6,8 +6,44 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
+void otherTest_02() {
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+
+
+	IMateriaSource* src2 = src;
+
+	AMateria* tmp;
+	tmp = src2->createMateria("ice");
+	me->equip(tmp);
+	tmp = src2->createMateria("cure");
+	me->equip(tmp);
+	tmp = src2->createMateria("ice");
+	me->equip(tmp);
+	tmp = src2->createMateria("ice");
+	me->equip(tmp);
+
+	ICharacter* bob = new Character("bob");
+
+	std::cout << "Test 2: " << std::endl;
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
+}
+
 void otherTest_01() {
 	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
@@ -19,10 +55,8 @@ void otherTest_01() {
 	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
+	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	// tmp = src->createMateria("ice"); // malloc free
-	// me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
 
@@ -62,5 +96,6 @@ int main()
 	delete src;
 
 	otherTest_01();
+	otherTest_02();
 	return 0;
 }
