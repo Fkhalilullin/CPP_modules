@@ -28,6 +28,7 @@ int main() {
 		Buba.gradeToLow();
 		Buba.gradeToLow();
 		Buba.gradeToHight();
+		Buba.gradeToHight();
 	}
 	catch(const std::exception& e)
 	{

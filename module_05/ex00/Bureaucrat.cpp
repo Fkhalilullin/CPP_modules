@@ -45,6 +45,16 @@ unsigned int Bureaucrat::getGrade() const {
 	return this->_grade;
 }
 
+const char	*Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
+}
+
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &obj)
 {
 	out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
