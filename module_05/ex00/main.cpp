@@ -38,4 +38,15 @@ int main() {
 	std::cout << Bob;
 	std::cout << Jey;
 	std::cout << Buba;
+
+	try
+	{
+		Bureaucrat K("Key",151);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
+	return (0);
 }
