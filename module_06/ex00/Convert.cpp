@@ -64,11 +64,11 @@ void Convert::convertToChar() {
 	std::cout << "char: ";
 	if (this->_value < 0 || this->_value > 255
 		|| this->_isPlusInf || this->_isMinusInf || this->_isNan)
-		std::cout << "impossible\n";
+		std::cout << "impossible" << std::endl;
 	else if (isprint(c))
-		std::cout << c << std::endl;
+		std::cout << "'" << c << "'" << std::endl;
 	else
-		std::cout << "Non displayable\n";
+		std::cout << "Non displayable" << std::endl;;
 }
 
 void	Convert::convertToFloat() {
