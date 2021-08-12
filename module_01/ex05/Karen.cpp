@@ -6,7 +6,7 @@
 /*   By: mteressa <mteressa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 19:17:24 by mteressa          #+#    #+#             */
-/*   Updated: 2021/07/09 19:42:11 by mteressa         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:09:08 by mteressa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void Karen::error(void) const
 void Karen::complain(std::string level) const
 {
     void	(Karen::* ptrfunc) (void) const = &Karen::error;
-
+    
 	(!level.compare("debug") && (ptrfunc = &Karen::debug));
 	(!level.compare("info") && (ptrfunc = &Karen::info));
 	(!level.compare("warning") && (ptrfunc = &Karen::warning));
